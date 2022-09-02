@@ -38,17 +38,17 @@ public class AudioVisualRestController {
         return new ResponseEntity<>(leadDto, HttpStatus.OK);
     }
 
-    @PostMapping (value="/agregarContactoSendinBlue")
-    public void agregarContactoSendinBlue(@RequestBody RequestRegistroLead requestRegistroLead,
+    @PostMapping (value="/agregarLeadEmailMarketing")
+    public void agregarLeadEmailMarketing(@RequestBody RequestRegistroLead requestRegistroLead,
                                                       WebRequest request) throws Exception {
 
-        logger.info("Inicio agregarContactoSendinBlue.......");
+        logger.info("Inicio agregarLeadEmailMarketing.......");
 
         logger.info("requestRegistroLead ==> " + requestRegistroLead);
 
         leadService.agregarContactoSendinBlue(requestRegistroLead);
 
-        logger.info("Fin agregarContactoSendinBlue.......");
+        logger.info("Fin agregarLeadEmailMarketing.......");
 
     }
 }

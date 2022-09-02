@@ -14,7 +14,7 @@ public class PrincipalController {
     private CampanaService campanaService;
 
 
-    @GetMapping("/regalo/{campana}")
+    @GetMapping("/regalo/{idCampana}")
     public String inicioPage(Model model, @PathVariable String idCampana) throws Exception {
 
         model.addAttribute("campana", campanaService.obtenerCampanaPorId(idCampana));

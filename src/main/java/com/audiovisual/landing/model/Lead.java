@@ -7,6 +7,7 @@ import java.time.Instant;
 @Table(name = "lead")
 public class Lead {
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "idlead", nullable = false)
     private Integer idLead;
 
@@ -46,7 +47,7 @@ public class Lead {
         return idLead;
     }
 
-    public void setIdLead(Integer id) {
+    public void setIdLead(Integer idLead) {
         this.idLead = idLead;
     }
 

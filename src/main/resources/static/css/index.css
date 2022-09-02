@@ -56,6 +56,48 @@ body {
     align-items: center;
 }
 
+.img-14 {
+    width: 14.2rem;
+}
+
+.img-12 {
+    width: 12rem;
+}
+
+.img-11 {
+    width: 11.5rem;
+}
+
+.img-9 {
+    width: 9.5rem;
+}
+
+.bootbox-body {
+    text-align: center;
+}
+
+.img-alert {
+    width: 3rem;
+    margin-bottom: 1rem;
+}
+
+.text-alert {
+    font-weight: 600;
+    font-family: 'Montserrat';
+}
+
+.modal-footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: calc(0.3rem - 1px);
+    border-bottom-left-radius: calc(0.3rem - 1px);
+}
+
 #header {
     padding-top: 4%;
     padding-bottom: 0%;
@@ -74,7 +116,7 @@ body {
     font-family: 'Montserrat-Bold';
 }
 
-#front-page{
+.front-page{
     padding-bottom: 20px;
     color: #FFF;
     font-weight: 700;
@@ -83,7 +125,7 @@ body {
     padding-bottom: 7.17577%;
 }
 
-#front-page .row {
+.front-page .row {
     max-width: 1500px;
 }
 #box .row {
@@ -103,29 +145,29 @@ body {
     background-image: linear-gradient(27deg, rgba(35, 35, 35, 1) 0%, rgba(0, 0, 0, 1) 100%);
 }
 
-#front-page.fp-background {
+.front-page.fp-background {
     background-color: rgba(0, 0, 0, 1);
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('../img/1.1-6731774.png');
+    background-image: url('../images/background.png');
 }
 
-#front-page .fp-header{
+.front-page .fp-header{
     max-width: 1100px;
     text-align: center;
     padding: 7%;
 }
 
-#front-page span{
+.front-page span{
     color: var(--color-primary);
 }
 
-#front-page .fp-img img{
+.front-page .fp-img img{
     width: 100%;    
 }
 
-#front-page .fp-form{
+.front-page .fp-form{
     width: 80%;
     opacity: 0;
     animation-delay: 0ms;
@@ -297,6 +339,9 @@ body {
     -moz-transition: opacity .3s ease;
     transition: opacity .3s ease;
     font-size: 24px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
 }
 
 #return svg {
@@ -381,7 +426,7 @@ body {
         line-height: 53px;
     }
 
-    #front-page .fp-header{
+    .front-page .fp-header{
         font-size: 25px;
         padding: 12% 7%;
     }
@@ -390,7 +435,7 @@ body {
         font-size: 25px;
     }
 
-    #front-page .fp-img{
+    .front-page .fp-img{
         padding-bottom: 50px;
     }
 

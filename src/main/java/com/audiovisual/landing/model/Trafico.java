@@ -1,15 +1,13 @@
 package com.audiovisual.landing.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.Instant;
 
 @Entity
 @Table(name = "trafico")
 public class Trafico {
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "idtrafico", nullable = false)
     private Integer idTrafico;
 

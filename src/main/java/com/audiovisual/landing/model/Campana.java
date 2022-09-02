@@ -8,6 +8,7 @@ import java.time.LocalDate;
 @Table(name = "campana")
 public class Campana {
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "idcampana", nullable = false)
     private Integer idCampana;
 
@@ -40,7 +41,7 @@ public class Campana {
     @JoinColumn(name = "idtrafico", nullable = false)
     private Trafico trafico;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "idlista_lead", nullable = false)
     private ListaLead listaLead;
 

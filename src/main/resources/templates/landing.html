@@ -7,16 +7,16 @@
 
     <!-- CSS
         ================================================== -->
-    <link rel="stylesheet" href="vendors/formvalidation/dist/css/FormValidation.min.css">
+    <link rel="stylesheet" th:href="@{/vendors/formvalidation/dist/css/FormValidation.min.css}">
 
     <!-- Javascript Files
         ================================================== -->
-    <script type="text/javascript" src="vendors/formvalidation/dist/js/FormValidation.min.js"></script>
-    <script type="text/javascript" src="vendors/formvalidation/dist/js/plugins/Bootstrap5.js"></script>
-    <script type="text/javascript" src="vendors/bloqUI/js/bloqUI.js"></script>
-    <script type="text/javascript" src="vendors/bootbox/js/bootbox.all.min.js"></script>
+    <script type="text/javascript" th:src="@{/vendors/formvalidation/dist/js/FormValidation.min.js}"></script>
+    <script type="text/javascript" th:src="@{/vendors/formvalidation/dist/js/plugins/Bootstrap5.js}"></script>
+    <script type="text/javascript" th:src="@{/vendors/bloqUI/js/bloqUI.js}"></script>
+    <script type="text/javascript" th:src="@{/vendors/bootbox/js/bootbox.all.min.js}"></script>
 
-    <script type="text/javascript" src="js/negocio/registrolead.js"></script>
+    <script type="text/javascript" th:src="@{/js/negocio/registrolead.js}"></script>
 
 </head>
 
@@ -24,7 +24,148 @@
 
     <div layout:fragment="content" th:remove="tag">
 
-        <div id="landing">
+        <div id="div_landing">
+            <section id="header"></section>
+            <section class="front-page fp-background">
+                <div class="row">
+                    <div class="col flex-h-center">
+                        <div class="fp-header">
+                            ¡Regístrate ahora y descarga nuestro MEGA PACK de <span>RECURSOS AUDIOVISUALES!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 flex-hv-start">
+                        <div class="fp-img">
+                            <img th:src="@{/images/pack.png}">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 flex-hv-center">
+                        <form id="form_lead_inicial" class="fp-form">
+                            <div class="row fp-input">
+                                <input type="hidden" id="hid_campana" name="hid_campana" th:value="${campana.idCampana}">
+                                <input type="email" id="txt_correo_inicial" name="txt_correo_inicial" placeholder="Escribe tu mejor correo electrónico" pattern="[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?" required>
+                                <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.25" y="0.25" width="15.5" height="9.5" rx="1.75" stroke="black" stroke-width="0.5"/>
+                                    <line x1="0.0760741" y1="2.76186" x2="8.07607" y2="5.31742" stroke="black" stroke-width="0.5"/>
+                                    <line y1="-0.25" x2="8.39827" y2="-0.25" transform="matrix(-0.952577 0.304296 0.304296 0.952577 16 3)"
+                                          stroke="black" stroke-width="0.5"/>
+                                </svg>
+                            </div>
+                            <div class="row text-center">
+                                <button type="button" id="btn_inicial" class="fp-button">DESCARGA GRATIS AQUI</button>
+                                <p class="text-aux">*Tus datos están seguros, solo enviaremos información de tu interés</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section id="box" class="box-background">
+                <div class="row">
+                    <div class="col-12 col-md-12 flex-hv-center">
+                        <div>
+                            <p class="box-title">Esto es lo que obtendrás</p>
+
+                            <ul class="box-list">
+                                <li>
+                                    <div>
+                                        <img class="img-12" th:src="@{/images/luts.png}">
+                                    </div>
+                                    <div class="list-content">
+                                <span>
+                                    <svg width="39" height="33" viewBox="0 0 39 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.04691 13.607C7.36481 12.1749 4.8609 12.3949 3.45428 14.0984C2.04766 15.8018 2.27098 18.3436 3.95309 19.7757L9.04691 13.607ZM10.9971 25.7727L14.0428 28.3656L19.1366 22.1969L16.0909 19.6039L10.9971 25.7727ZM3.95309 19.7757L10.9971 25.7727L16.0909 19.6039L9.04691 13.607L3.95309 19.7757Z" fill="white"/>
+                                        <path d="M35.1357 9.21882C36.5567 7.52734 36.355 4.98365 34.6851 3.53732C33.0153 2.09099 30.5096 2.28972 29.0886 3.9812L35.1357 9.21882ZM13.4678 22.5755L10.8948 25.6382L16.9419 30.8758L19.5149 27.8131L13.4678 22.5755ZM29.0886 3.9812L13.4678 22.5755L19.5149 27.8131L35.1357 9.21882L29.0886 3.9812Z" fill="white"/>
+                                    </svg>
+                                </span>
+                                        <div><span>LUTs Cinemáticos:</span> +1000 LUTs que modificarán el color de tus videos para darles un look más cinematográfico</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-content order--2">
+                                <span>
+                                    <svg width="39" height="33" viewBox="0 0 39 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.04691 13.607C7.36481 12.1749 4.8609 12.3949 3.45428 14.0984C2.04766 15.8018 2.27098 18.3436 3.95309 19.7757L9.04691 13.607ZM10.9971 25.7727L14.0428 28.3656L19.1366 22.1969L16.0909 19.6039L10.9971 25.7727ZM3.95309 19.7757L10.9971 25.7727L16.0909 19.6039L9.04691 13.607L3.95309 19.7757Z" fill="white"/>
+                                        <path d="M35.1357 9.21882C36.5567 7.52734 36.355 4.98365 34.6851 3.53732C33.0153 2.09099 30.5096 2.28972 29.0886 3.9812L35.1357 9.21882ZM13.4678 22.5755L10.8948 25.6382L16.9419 30.8758L19.5149 27.8131L13.4678 22.5755ZM29.0886 3.9812L13.4678 22.5755L19.5149 27.8131L35.1357 9.21882L29.0886 3.9812Z" fill="white"/>
+                                    </svg>
+                                </span>
+                                        <div><span>Transiciones de Video:</span> +1000 LUTs que modificarán el color de tus videos para darles un look más cinematográfico</div>
+                                    </div>
+                                    <div class="order--1">
+                                        <img class="img-12" th:src="@{/images/transitions.png}">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <img class="img-11" th:src="@{/images/soundeffects.png}">
+                                    </div>
+                                    <div class="list-content">
+                                <span>
+                                    <svg width="39" height="33" viewBox="0 0 39 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.04691 13.607C7.36481 12.1749 4.8609 12.3949 3.45428 14.0984C2.04766 15.8018 2.27098 18.3436 3.95309 19.7757L9.04691 13.607ZM10.9971 25.7727L14.0428 28.3656L19.1366 22.1969L16.0909 19.6039L10.9971 25.7727ZM3.95309 19.7757L10.9971 25.7727L16.0909 19.6039L9.04691 13.607L3.95309 19.7757Z" fill="white"/>
+                                        <path d="M35.1357 9.21882C36.5567 7.52734 36.355 4.98365 34.6851 3.53732C33.0153 2.09099 30.5096 2.28972 29.0886 3.9812L35.1357 9.21882ZM13.4678 22.5755L10.8948 25.6382L16.9419 30.8758L19.5149 27.8131L13.4678 22.5755ZM29.0886 3.9812L13.4678 22.5755L19.5149 27.8131L35.1357 9.21882L29.0886 3.9812Z" fill="white"/>
+                                    </svg>
+                                </span>
+                                        <div><span>Efectos de Sonido:</span> Más de 500 SFX que te ayudarán a crear una atmósfera sonora ideal que agregará valor a tus proyectos</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-content order--2">
+                                <span>
+                                    <svg width="39" height="33" viewBox="0 0 39 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.04691 13.607C7.36481 12.1749 4.8609 12.3949 3.45428 14.0984C2.04766 15.8018 2.27098 18.3436 3.95309 19.7757L9.04691 13.607ZM10.9971 25.7727L14.0428 28.3656L19.1366 22.1969L16.0909 19.6039L10.9971 25.7727ZM3.95309 19.7757L10.9971 25.7727L16.0909 19.6039L9.04691 13.607L3.95309 19.7757Z" fill="white"/>
+                                        <path d="M35.1357 9.21882C36.5567 7.52734 36.355 4.98365 34.6851 3.53732C33.0153 2.09099 30.5096 2.28972 29.0886 3.9812L35.1357 9.21882ZM13.4678 22.5755L10.8948 25.6382L16.9419 30.8758L19.5149 27.8131L13.4678 22.5755ZM29.0886 3.9812L13.4678 22.5755L19.5149 27.8131L35.1357 9.21882L29.0886 3.9812Z" fill="white"/>
+                                    </svg>
+                                </span>
+                                        <div><span>Film Grains:</span> 3 texturas que te servirán para darle una textura fílmica/análogica a tus videos para recrear un efecto de película antigua</div>
+                                    </div>
+                                    <div class="order--1">
+                                        <img class="img-14" th:src="@{/images/filmgrains.png}">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <img class="img-9" th:src="@{/images/letterboxs.png}">
+                                    </div>
+                                    <div class="list-content">
+                                <span>
+                                    <svg width="39" height="33" viewBox="0 0 39 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.04691 13.607C7.36481 12.1749 4.8609 12.3949 3.45428 14.0984C2.04766 15.8018 2.27098 18.3436 3.95309 19.7757L9.04691 13.607ZM10.9971 25.7727L14.0428 28.3656L19.1366 22.1969L16.0909 19.6039L10.9971 25.7727ZM3.95309 19.7757L10.9971 25.7727L16.0909 19.6039L9.04691 13.607L3.95309 19.7757Z" fill="white"/>
+                                        <path d="M35.1357 9.21882C36.5567 7.52734 36.355 4.98365 34.6851 3.53732C33.0153 2.09099 30.5096 2.28972 29.0886 3.9812L35.1357 9.21882ZM13.4678 22.5755L10.8948 25.6382L16.9419 30.8758L19.5149 27.8131L13.4678 22.5755ZM29.0886 3.9812L13.4678 22.5755L19.5149 27.8131L35.1357 9.21882L29.0886 3.9812Z" fill="white"/>
+                                    </svg>
+                                </span>
+                                        <div><span>Letterbox:</span> 20 márgenes fílmicos que le darán aspectos creativos a tus videos.</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section id="offer">
+                <div class="row">
+                    <p class="text-center">
+                        ¡Recibe más de 15GB
+                        de Recursos Audiovisuales!
+                    </p>
+                    <form id="form_lead_final" class="fp-form">
+                        <div class="row fp-input">
+                            <input type="email"  id="txt_correo_final" name="txt_correo_final" placeholder="Escribe tu mejor correo electrónico" pattern="[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?" required>
+                            <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.25" y="0.25" width="15.5" height="9.5" rx="1.75" stroke="black" stroke-width="0.5"/>
+                                <line x1="0.0760741" y1="2.76186" x2="8.07607" y2="5.31742" stroke="black" stroke-width="0.5"/>
+                                <line y1="-0.25" x2="8.39827" y2="-0.25" transform="matrix(-0.952577 0.304296 0.304296 0.952577 16 3)"
+                                      stroke="black" stroke-width="0.5"/>
+                            </svg>
+                        </div>
+                        <div class="row text-center">
+                            <button type="button" id="btn_final" class="fp-button">DESCARGA GRATIS AQUI</button>
+                            <p class="text-aux">*Tus datos están seguros, solo enviaremos información de tu interés</p>
+                        </div>
+                    </form>
+                </div>
+            </section>
             <a href="#header">
                 <div id="return">
                     <svg width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,9 +174,40 @@
                     </svg>
                 </div>
             </a>
-        </div>
-        <div id="gracias">
 
+        </div>
+        <div id="div_gracias" class="d-none">
+            <section id="header-copy" class="flex-hv-center text-center">
+                <h2>
+                    ¡ESPERA! COMPLETA EL PROCESO...
+                </h2>
+            </section>
+            <section class="front-page background-copy">
+                <div class="row">
+                    <div class="col flex-h-center">
+                        <div class="fp-header">
+                            Únete a nuestro <span>grupo de telegram</span> en el cuál
+                            estará el link de descarga para que puedas obtener todos
+                            los <span>recursos audiovisuales</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 flex-hv-center">
+                        <div class="fp-img p20">
+                            <img th:src="@{/images/telegram.png}">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 offset-md-2 mt-5">
+                        <div class="row text-center p20 copy-button">
+                            <a href="https://t.me/martinvelarde1" target="_BLANK">
+                                <button type="button" class="slide slide_from_left button">ACCEDE AL LINK DE DESCARGA</button>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
         </div>
 
     </div>

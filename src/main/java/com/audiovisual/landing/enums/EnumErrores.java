@@ -6,7 +6,6 @@ import org.apache.commons.lang3.StringUtils;
 public enum EnumErrores {
 
     ERROR_422001(422001, "El correo ingresado ya existe. Por favor ingresar uno diferente.");
-
     private EnumErrores(int code, String msg) {
         this.code = code;
         this.msg = msg;

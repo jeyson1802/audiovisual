@@ -1,14 +1,16 @@
 package com.audiovisual.landing.rest;
 
-import com.audiovisual.landing.dto.RegistroConferenciaDto;
-import com.audiovisual.landing.request.RequestRegistroConferencia;
-import com.audiovisual.landing.service.RegistroConferenciaService;
+import com.audiovisual.landing.dto.LeadDto;
+import com.audiovisual.landing.request.RequestRegistroLead;
+import com.audiovisual.landing.service.LeadService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
 
 @RestController
@@ -17,33 +19,36 @@ public class AudioVisualRestController {
     private static final Logger logger = LogManager.getLogger(AudioVisualRestController.class);
 
     @Autowired
-    private RegistroConferenciaService registroConferenciaService;
+    private LeadService leadService;
 
-    @PostMapping(value="/registrarParticipanteConferencia")
-    public ResponseEntity<RegistroConferenciaDto> registrarParticipanteConferencia(@RequestBody RequestRegistroConferencia requestRegistroConferencia,
-                                                                            WebRequest request) throws Exception {
+    @PostMapping(value="/registrarLead")
+    public ResponseEntity<LeadDto> registrarLead(@RequestBody RequestRegistroLead requestRegistroLead,
+                                                                             WebRequest request) throws Exception {
 
-        logger.info("Inicio registrarParticipanteConferencia.......");
+        logger.info("Inicio registrarLead.......");
 
-        logger.info("requestRegistroConferencia ==> " + requestRegistroConferencia);
+        logger.info("requestRegistroLead ==> " + requestRegistroLead);
 
-        RegistroConferenciaDto registroConferenciaDto = registroConferenciaService.registrarParticipanteConferencia(requestRegistroConferencia);
+        LeadDto leadDto = leadService.registrarLead(requestRegistroLead);
 
-        logger.info("registroConferenciaDto ==> " + registroConferenciaDto);
+        logger.info("leadDto ==> " + leadDto);
 
-        logger.info("Fin registrarParticipanteConferencia.......");
+        logger.info("Fin registrarLead.......");
 
-        return new ResponseEntity<>(registroConferenciaDto, HttpStatus.OK);
+        return new ResponseEntity<>(leadDto, HttpStatus.OK);
     }
 
-    @PostMapping (value="/agregarContactoParticipanteSendinBlue/{idParticipante}")
-    public void agregarContactoParticipanteSendinBlue(@PathVariable("idParticipante") Integer idParticipante) throws Exception {
+    @PostMapping (value="/agregarContactoSendinBlue")
+    public void agregarContactoSendinBlue(@RequestBody RequestRegistroLead requestRegistroLead,
+                                                      WebRequest request) throws Exception {
 
-        logger.info("Inicio agregarContactoParticipanteSendinBlue.......");
+        logger.info("Inicio agregarContactoSendinBlue.......");
 
-        registroConferenciaService.agregarContactoParticipanteSendinBlue(idParticipante);
+        logger.info("requestRegistroLead ==> " + requestRegistroLead);
 
-        logger.info("Fin agregarContactoParticipanteSendinBlue.......");
+        leadService.agregarContactoSendinBlue(requestRegistroLead);
+
+        logger.info("Fin agregarContactoSendinBlue.......");
 
     }
 }

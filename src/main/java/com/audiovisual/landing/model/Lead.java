@@ -1,22 +1,31 @@
 package com.audiovisual.landing.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.Instant;
 
 @Entity
-@Table(name = "pais")
-public class Pais {
+@Table(name = "lead")
+public class Lead {
     @Id
-    @Column(name = "idpais", nullable = false)
-    private Integer id;
+    @Column(name = "idlead", nullable = false)
+    private Integer idLead;
 
-    @Column(name = "code", nullable = false, length = 2)
-    private String code;
-    @Column(name = "descripcion", nullable = false, length = 200)
-    private String descripcion;
+    @Column(name = "correo", nullable = false, length = 200)
+    private String correo;
+
+    @Column(name = "nombres", length = 200)
+    private String nombres;
+
+    @Column(name = "ubicacion", length = 200)
+    private String ubicacion;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "idlista_lead", nullable = false)
+    private ListaLead listaLead;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "idcampana", nullable = false)
+    private Campana campana;
 
     @Column(name = "estado", nullable = false, length = 1)
     private String estado;
@@ -33,33 +42,52 @@ public class Pais {
     @Column(name = "usuario_modificacion", length = 45)
     private String usuarioModificacion;
 
-    public Pais() {
-    }
-    public Pais(Integer id) {
-        this.id = id;
-    }
-    public Integer getId() {
-        return id;
+    public Integer getIdLead() {
+        return idLead;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdLead(Integer id) {
+        this.idLead = idLead;
     }
 
-    public String getCode() {
-        return code;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getNombres() {
+        return nombres;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    public ListaLead getListaLead() {
+        return listaLead;
+    }
+
+    public void setListaLead(ListaLead listaLead) {
+        this.listaLead = listaLead;
+    }
+
+    public Campana getCampana() {
+        return campana;
+    }
+
+    public void setCampana(Campana campana) {
+        this.campana = campana;
     }
 
     public String getEstado() {
@@ -102,17 +130,4 @@ public class Pais {
         this.usuarioModificacion = usuarioModificacion;
     }
 
-    @Override
-    public String toString() {
-        return "Pais{" +
-                "id=" + id +
-                ", code='" + code + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", estado='" + estado + '\'' +
-                ", fechaRegistro=" + fechaRegistro +
-                ", usuarioRegistro='" + usuarioRegistro + '\'' +
-                ", fechaModificacion=" + fechaModificacion +
-                ", usuarioModificacion='" + usuarioModificacion + '\'' +
-                '}';
-    }
 }

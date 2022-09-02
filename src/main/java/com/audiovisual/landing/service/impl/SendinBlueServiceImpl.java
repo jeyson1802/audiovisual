@@ -22,7 +22,7 @@ public class SendinBlueServiceImpl implements SendinBlueService {
     private static final Logger logger = LogManager.getLogger(SendinBlueServiceImpl.class);
 
     @Override
-    public void crearContacto(String email, String apellidos, String nombres, String numero, String idLista, String apiKeyEmailMarketing) throws Exception {
+    public void crearContacto(String email, String idLista, String apiKeyEmailMarketing) throws Exception {
 
         logger.info("Inicio crearContacto");
 
@@ -34,12 +34,6 @@ public class SendinBlueServiceImpl implements SendinBlueService {
 
         CreateContact createContact = new CreateContact();
         createContact.setEmail(email);
-
-        Properties attributes = new Properties();
-        attributes.setProperty("APELLIDOS", apellidos);
-        attributes.setProperty("NOMBRE", nombres);
-        attributes.setProperty("SMS", numero);
-        createContact.setAttributes(attributes);
 
         List<Long> listIds = new ArrayList<Long>();
         listIds.add(StringUtil.toLong(idLista));

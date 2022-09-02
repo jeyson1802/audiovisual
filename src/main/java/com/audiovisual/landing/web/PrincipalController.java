@@ -1,15 +1,11 @@
 package com.audiovisual.landing.web;
 
-import com.audiovisual.landing.service.CargoService;
-import com.audiovisual.landing.service.ConferenciaService;
-import com.audiovisual.landing.service.FuenteService;
-import com.audiovisual.landing.service.PaisService;
-import com.profetadavidowuor.cruzada.service.*;
-import com.audiovisual.landing.util.Constante;
+import com.audiovisual.landing.service.CampanaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class PrincipalController {
@@ -24,13 +20,13 @@ public class PrincipalController {
     private FuenteService fuenteService;
 
     @Autowired
-    private ConferenciaService conferenciaService;
+    private CampanaService campanaService;
 
 
-    @GetMapping("/")
-    public String inicioPage(Model model) throws Exception {
+    @GetMapping("/regalo/{campana}")
+    public String inicioPage(Model model, @PathVariable String idCampana) throws Exception {
 
-        model.addAttribute("conferencia", conferenciaService.obtenerConferenciaPorPais(Constante.COD_PAIS_REPUBLICA_DOMINICANA));
+        model.addAttribute("campana", campanaService.obtenerCampanaPorId(idCampana));
         return "home";
     }
 

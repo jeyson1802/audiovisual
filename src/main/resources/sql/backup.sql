@@ -209,7 +209,7 @@ CREATE TABLE `trafico` (
                            `fecha_modificacion` datetime DEFAULT NULL,
                            `usuario_modificacion` varchar(45) DEFAULT NULL,
                            PRIMARY KEY (`idtrafico`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -218,7 +218,7 @@ CREATE TABLE `trafico` (
 
 LOCK TABLES `trafico` WRITE;
 /*!40000 ALTER TABLE `trafico` DISABLE KEYS */;
-INSERT INTO `trafico` VALUES (0,'Grupos de Facebook','1','1','2022-09-02 13:37:02','',NULL,NULL);
+INSERT INTO `trafico` VALUES (1,'Grupos de Facebook','1','1','2022-09-02 13:37:02','',NULL,NULL);
 /*!40000 ALTER TABLE `trafico` ENABLE KEYS */;
 UNLOCK TABLES;
 

@@ -11,15 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class PrincipalController {
 
     @Autowired
-    private PaisService paisService;
-
-    @Autowired
-    private CargoService cargoService;
-
-    @Autowired
-    private FuenteService fuenteService;
-
-    @Autowired
     private CampanaService campanaService;
 
 
@@ -27,7 +18,7 @@ public class PrincipalController {
     public String inicioPage(Model model, @PathVariable String idCampana) throws Exception {
 
         model.addAttribute("campana", campanaService.obtenerCampanaPorId(idCampana));
-        return "home";
+        return "landing";
     }
 
 }

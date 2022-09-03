@@ -1,5 +1,5 @@
 :root {
-    --color-primary: rgb(243, 0, 0); 
+    --color-primary: rgb(243, 0, 0);
     --background-gradient: linear-gradient(27deg, rgba(129, 1, 0, 1) 0%, rgba(255, 4, 0, 1) 100%);
 }
 
@@ -47,7 +47,7 @@ body {
 .flex-hv-start{
     display: flex;
     justify-content: center;
-    align-items: start;    
+    align-items: start;
 }
 
 .flex-hv-center{
@@ -86,6 +86,16 @@ body {
     font-family: 'Montserrat';
 }
 
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    color: #dc3545;
+    font-family: Ubuntu;
+    font-size: 1rem;
+    text-align: center;
+}
+
 .modal-footer {
     display: flex;
     flex-wrap: wrap;
@@ -99,16 +109,16 @@ body {
 }
 
 #header {
-    padding-top: 4%;
-    padding-bottom: 0%;
-    padding-left: 0;    
+    padding: 2% 20px;
     background-color: transparent;
     background: rgb(247,207,162);
     background: var(--background-gradient);
+    color:#FFF;
+    font-family: 'Montserrat-Bold';
 }
 
 #header-copy {
-    padding: 3% 20px;        
+    padding: 3% 20px;
     background-color: transparent;
     background: rgb(247,207,162);
     background: var(--background-gradient);
@@ -121,7 +131,7 @@ body {
     color: #FFF;
     font-weight: 700;
     font-family: 'Montserrat-Bold';
-    font-size: 36px;   
+    font-size: 36px;
     padding-bottom: 7.17577%;
 }
 
@@ -159,12 +169,18 @@ body {
     padding: 7%;
 }
 
+.front-page .fp-header-thanks {
+    max-width: 1100px;
+    text-align: center;
+    padding: 2%;
+}
+
 .front-page span{
     color: var(--color-primary);
 }
 
 .front-page .fp-img img{
-    width: 100%;    
+    width: 100%;
 }
 
 .front-page .fp-form{
@@ -174,7 +190,7 @@ body {
     animation-duration: 1100ms;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
-    animation-name: appear;    
+    animation-name: appear;
 }
 
 .fp-input{
@@ -272,9 +288,9 @@ body {
 #box .box-list li{
     display: flex;
     font-family: 'Montserrat';
-    font-size: 25px;    
+    font-size: 25px;
     line-height: 1.1;
-    align-items: center;    
+    align-items: center;
 }
 
 .list-content{
@@ -298,7 +314,7 @@ body {
 
 #offer p{
     font-size: 32px;
-    font-family: 'Montserrat-Bold-Italic';    
+    font-family: 'Montserrat-Bold-Italic';
 }
 
 #offer .fp-form {opacity: 0;
@@ -306,7 +322,7 @@ body {
     animation-duration: 1100ms;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
-    animation-name: appear; 
+    animation-name: appear;
 }
 
 #footer {
@@ -314,8 +330,8 @@ body {
     align-items: center;
     justify-content: center;
     color: #FFF;
-    padding: 1.5% 1%;    
-    background-color: transparent;    
+    padding: 1.5% 1%;
+    background-color: transparent;
     font-size: 12px;
     font-family: 'Montserrat-Italic';
     background-image: linear-gradient(70deg, rgba(18, 18, 18, 1) 0%, rgba(0, 0, 0, 1) 100%);
@@ -365,12 +381,12 @@ body {
     font-family: 'Montserrat-Bold';
     letter-spacing: 0px;
     border-width: 0px;
-    padding: 15px 30px;    
+    padding: 15px 30px;
     border-radius: 4px;
     line-height: 1.1;
     position: relative;
     z-index: 1;
-    overflow: hidden;    
+    overflow: hidden;
 }
 
 .copy-button button::after {
@@ -378,7 +394,7 @@ body {
     background: #333333;
     position: absolute;
     z-index: -1;
-    padding: 15px 30px;  
+    padding: 15px 30px;
     display: block;
 }
 .copy-button button[class^="slide"]::after {
@@ -409,7 +425,7 @@ body {
     order: 1;
 }
 
-@media(max-width: 768px){ 
+@media(max-width: 768px){
     .order--1{
         order: 1;
     }
@@ -431,12 +447,21 @@ body {
         padding: 12% 7%;
     }
 
+    .front-page .fp-header-thanks{
+        font-size: 25px;
+        padding: 7% 7%;
+    }
+
     #box .box-title {
         font-size: 25px;
     }
 
     .front-page .fp-img{
         padding-bottom: 50px;
+    }
+
+    .front-page .fp-img-thanks {
+        padding-bottom: 1px;
     }
 
     #box .box-list {
@@ -446,13 +471,13 @@ body {
     #box .box-list svg{
         display: none;
     }
-    
+
     #box .box-list span{
         font-family: 'Montserrat-Bold';
         font-size: 25px;
         display: block;
     }
-    
+
     #box .box-list li{
         display: flex;
         font-family: 'Montserrat';

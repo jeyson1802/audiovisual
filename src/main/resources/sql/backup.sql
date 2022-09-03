@@ -97,13 +97,13 @@ INSERT INTO `curso` VALUES (1,'VisualMasterClass 2.0',NULL,97.00,43.40,'1','2022
 UNLOCK TABLES;
 
 --
--- Table structure for table `lead`
+-- Table structure for table `leads`
 --
 
-DROP TABLE IF EXISTS `lead`;
+DROP TABLE IF EXISTS `leads`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `lead` (
+CREATE TABLE `leads` (
                         `idlead` int NOT NULL AUTO_INCREMENT,
                         `correo` varchar(200) NOT NULL,
                         `nombres` varchar(200) DEFAULT NULL,
@@ -116,10 +116,10 @@ CREATE TABLE `lead` (
                         `fecha_modificacion` datetime DEFAULT NULL,
                         `usuario_modificacion` varchar(45) DEFAULT NULL,
                         PRIMARY KEY (`idlead`),
-                        KEY `fk_lead_lista_lead1_idx` (`idlista_lead`),
-                        KEY `fk_lead_campana1_idx` (`idcampana`),
-                        CONSTRAINT `fk_lead_campana1` FOREIGN KEY (`idcampana`) REFERENCES `campana` (`idcampana`),
-                        CONSTRAINT `fk_lead_lista_lead1` FOREIGN KEY (`idlista_lead`) REFERENCES `lista_lead` (`idlista_lead`)
+                        KEY `fk_leads_lista_lead1_idx` (`idlista_lead`),
+                        KEY `fk_leads_campana1_idx` (`idcampana`),
+                        CONSTRAINT `fk_leads_campana1` FOREIGN KEY (`idcampana`) REFERENCES `campana` (`idcampana`),
+                        CONSTRAINT `fk_leads_lista_lead1` FOREIGN KEY (`idlista_lead`) REFERENCES `lista_lead` (`idlista_lead`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -127,9 +127,9 @@ CREATE TABLE `lead` (
 -- Dumping data for table `lead`
 --
 
-LOCK TABLES `lead` WRITE;
-/*!40000 ALTER TABLE `lead` DISABLE KEYS */;
-/*!40000 ALTER TABLE `lead` ENABLE KEYS */;
+LOCK TABLES `leads` WRITE;
+/*!40000 ALTER TABLE `leads` DISABLE KEYS */;
+/*!40000 ALTER TABLE `leads` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

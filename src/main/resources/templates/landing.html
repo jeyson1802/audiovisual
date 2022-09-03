@@ -25,7 +25,11 @@
     <div layout:fragment="content" th:remove="tag">
 
         <div id="div_landing">
-            <section id="header"></section>
+            <section id="header" class="flex-hv-center text-center">
+                <h2>
+                    ¡POR TIEMPO LIMITADO!
+                </h2>
+            </section>
             <section class="front-page fp-background">
                 <div class="row">
                     <div class="col flex-h-center">
@@ -185,7 +189,7 @@
             <section class="front-page background-copy">
                 <div class="row">
                     <div class="col flex-h-center">
-                        <div class="fp-header">
+                        <div class="fp-header-thanks">
                             Únete a nuestro <span>grupo de telegram</span> en el cuál
                             estará el link de descarga para que puedas obtener todos
                             los <span>recursos audiovisuales</span>
@@ -194,13 +198,13 @@
                 </div>
                 <div class="row">
                     <div class="col-12 flex-hv-center">
-                        <div class="fp-img p20">
+                        <div class="fp-img img-thanks">
                             <img th:src="@{/images/telegram.png}">
                         </div>
                     </div>
-                    <div class="col-12 col-md-8 offset-md-2 mt-5">
+                    <div class="col-12 col-md-8 offset-md-2">
                         <div class="row text-center p20 copy-button">
-                            <a href="https://t.me/martinvelarde1" target="_BLANK">
+                            <a th:href="${campana.linkCanal}" target="_BLANK">
                                 <button type="button" class="slide slide_from_left button">ACCEDE AL LINK DE DESCARGA</button>
                             </a>
                         </div>

@@ -50,7 +50,7 @@ function initComponentes() {
         form_lead_inicial.validate().then(function(status) {
             if(status === 'Valid') {
                 registrarLead(txt_correo_inicial.val());
-                //registrarLeadEmailMarketing(txt_correo_inicial.val());
+                registrarLeadEmailMarketing(txt_correo_inicial.val());
             }
         });
     });
@@ -168,11 +168,11 @@ function registrarLead(correo) {
             if (xhr.status == HttpCodes.success) {
 
                 div_landing.addClass("d-none");
-                div_landing.removeClass("d-none");
+                div_gracias.removeClass("d-none");
 
                 $('body,html').animate({
-                    scrollTop: 450
-                }, 800);
+                    scrollTop: 0
+                }, 200);
 
             }
         }

@@ -170,6 +170,8 @@ function registrarLead(correo) {
                 div_landing.addClass("d-none");
                 div_gracias.removeClass("d-none");
 
+                fbq('track', 'Lead');
+
                 $('body,html').animate({
                     scrollTop: 0
                 }, 200);

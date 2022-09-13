@@ -6,4 +6,6 @@ public class Constante {
 	public static final String COD_ESTADO_INACTIVO = "0";
 	public static final String USUARIO_DEFAULT = "USER_DEFAULT";
 
+	public static final String CAMPANA_DEFAULT = "915521";
+
 }

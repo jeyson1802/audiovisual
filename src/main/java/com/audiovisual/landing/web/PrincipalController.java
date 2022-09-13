@@ -1,6 +1,7 @@
 package com.audiovisual.landing.web;
 
 import com.audiovisual.landing.service.CampanaService;
+import com.audiovisual.landing.util.Constante;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,13 @@ public class PrincipalController {
     public String inicioPage(Model model, @PathVariable String idCampana) throws Exception {
 
         model.addAttribute("campana", campanaService.obtenerCampanaPorId(idCampana));
+        return "landing";
+    }
+
+    @GetMapping("/")
+    public String homePage(Model model) throws Exception {
+
+        model.addAttribute("campana", campanaService.obtenerCampanaPorId(Constante.CAMPANA_DEFAULT));
         return "landing";
     }
 

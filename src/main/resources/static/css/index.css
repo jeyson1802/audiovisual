@@ -160,7 +160,7 @@ body {
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('../images/background.png');
+    background-image: url('https://filmmakerrgb.b-cdn.net/images/background-min.png');
 }
 
 .front-page .fp-header{

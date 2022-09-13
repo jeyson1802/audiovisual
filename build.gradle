@@ -29,6 +29,10 @@ dependencies {
 
 	// SENDINBLUE
 	implementation "com.sendinblue:sib-api-v3-sdk:6.0.0"
+
+	//FACEBOOK SDK
+	implementation 'com.facebook.business.sdk:facebook-java-business-sdk:14.0.0'
+
 }
 
 tasks.named('test') {
